@@ -67,4 +67,15 @@ public class OrderTest {
 		assertEquals(125, total2, 0);
 		assertEquals(25, total3, 0);
 	}
+	
+	@Test
+	public void testSaved()
+	{
+		SpyShopDataAccess data = new SpyShopDataAccess();
+		Order o_O = new Order(5, data);
+		
+		o_O.getOrderLines().addOrderLine(1, 3);
+		
+		assertTrue(data.getSaved());
+	}
 }
