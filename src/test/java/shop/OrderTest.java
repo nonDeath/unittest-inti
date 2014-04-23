@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class OrderTest {
 
-	@Test
+	@Test(expected=IllegalArgumentException.class)
 	public void test() {
 		IShopDataAccess data = null;
 		Order o_O = new Order(1, data);

@@ -18,7 +18,7 @@ public class Order {
 		this.id = id;
 		this.dataAccess = dataAccess;
 		
-		orderLines = new OrderLineCollection();
+		orderLines = new OrderLineCollection(this);
 	}
 	
 	public void save() {
