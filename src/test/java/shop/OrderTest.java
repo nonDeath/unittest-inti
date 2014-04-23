@@ -109,4 +109,18 @@ public class OrderTest {
 		assertEquals(296, total, 0);
 		assertEquals(43.5, total2, 0);
 	}	
+	
+	@Test
+	public void testSaved()
+	{
+		SpyShopDataAccess data = new SpyShopDataAccess();
+		Order o_O = new Order(5, data);
+		
+		o_O.getOrderLines().addOrderLine(1, 3);
+		
+		o_O.save();
+		
+		assertTrue(data.getSaved());
+	}
+
 }
